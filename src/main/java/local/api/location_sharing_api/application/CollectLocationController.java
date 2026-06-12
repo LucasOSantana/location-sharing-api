@@ -32,7 +32,7 @@ public class CollectLocationController {
         rabbitTemplate.convertAndSend(exchangeName, routingKey, entity);
         
         CollectLocationOutputDto output = new CollectLocationOutputDto(entity, 
-            "Localização recebida com sucesso e enviada para processamento."
+            "Location received successfully and sent for processing."
         );
 
         return ResponseEntity.ok(output);
