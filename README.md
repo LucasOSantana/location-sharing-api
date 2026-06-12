@@ -27,6 +27,19 @@ The project follows an event-driven architecture to ensure high availability and
 *   RabbitMQ instance running (Expected at `rabbitmq:5672` per `application.properties`)
 
 ### 2. Running the Project
+
+#### Using Docker (Recommended)
+The project includes a `docker-compose.yml` file that sets up both the API and the RabbitMQ broker with the correct credentials.
+
+```bash
+docker-compose up --build
+```
+
+The API will be available at `http://localhost:8080` and the RabbitMQ Management Console at `http://localhost:15672` (Guest login: `usernamelocalqueue` / `passwordlocalqueue`).
+
+#### Local Execution
+If you prefer to run the API locally (outside Docker), ensure a RabbitMQ instance is reachable at `localhost:5672`.
+
 ```bash
 ./mvnw spring-boot:run
 ```
